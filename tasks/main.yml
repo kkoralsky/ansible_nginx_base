@@ -1,0 +1,14 @@
+---
+- name: install nginx
+  apt: name=nginx
+
+- block:
+  - name: mkdir cert folder
+    file: path='{{ cert_base_path }}' state=directory
+
+  - name: copy cert
+    copy: src='{{ cert }}' dest='{{ cert_path }}'
+
+  - name: copy cert key
+    copy: src='{{ cert_key }}' dest='{{ cert_key_path }}' mode=0600
+  when: ssl
