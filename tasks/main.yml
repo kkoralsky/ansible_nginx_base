@@ -12,3 +12,4 @@
   - name: copy cert key
     copy: src='{{ cert_key }}' dest='{{ cert_key_path }}' mode=0600
   when: ssl
+  notify: reload nginx
