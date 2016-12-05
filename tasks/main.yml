@@ -8,8 +8,9 @@
 
   - name: copy cert
     copy: src='{{ cert }}' dest='{{ cert_path }}'
+    notify: reload nginx
 
   - name: copy cert key
     copy: src='{{ cert_key }}' dest='{{ cert_key_path }}' mode=0600
+    notify: reload nginx
   when: ssl
-  notify: reload nginx
