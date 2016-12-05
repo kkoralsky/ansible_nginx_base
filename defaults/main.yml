@@ -1,4 +1,6 @@
 ---
+http_port: 80
+
 ssl: False
 cert: cert.pem
 cert_key: cert.key
