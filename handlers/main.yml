@@ -1,3 +1,5 @@
 ---
 - name: reload nginx
   service: name=nginx state=reloaded
+  become: true
+  tags: [superuser, webserver]
