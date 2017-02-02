@@ -1,7 +1,10 @@
 ---
 http_port: 80
 
-ssl: False
+
+domains: [localhost]
+ssl: no
+redirect_http: no
 cert: cert.pem
 cert_key: cert.key
 cert_base_path: /etc/ssl/certs
