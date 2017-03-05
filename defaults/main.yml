@@ -8,3 +8,6 @@ redirect_http: no
 cert: cert.pem
 cert_key: cert.key
 cert_base_path: /etc/ssl/certs
+
+nginx_access_log: no
+nginx_error_log: yes
