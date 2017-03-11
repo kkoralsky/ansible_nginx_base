@@ -1,6 +1,7 @@
 ---
 - name: install nginx
   apt: name=nginx
+  tags: webserver
 
 - block:
   - name: mkdir cert folder
@@ -19,3 +20,4 @@
     when: redirect_http
     notify: reload nginx
   when: ssl
+  tags: webserver
