@@ -10,4 +10,4 @@ galaxy_info:
     - all
 
   galaxy_tags: [ nginx, debian ]
-dependencies: [ debian_common ]
+dependencies: [ ]

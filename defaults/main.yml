@@ -1,7 +1,6 @@
 ---
 http_port: 80
 
-
 domains: [localhost]
 ssl: no
 redirect_http: no
