@@ -1,5 +1,5 @@
 server {
     listen 80;
-    server_name     _;
-    return 301 https://{{ domain }} $request_uri;
+    server_name {{ domains|join(' ') }};
+    return 301 https://{{ domain }}/$request_uri;
 }
