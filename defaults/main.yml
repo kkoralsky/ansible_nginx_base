@@ -12,3 +12,7 @@ nginx_access_log: no
 nginx_error_log: yes
 
 nginx_chunked_encoding: false
+
+nginx_install: yes
+nginx_install_os: no  # install from official Nginx repo instead
+nginx_apt_release: '{{ ansible_distribution_release }}'

@@ -1,7 +1,7 @@
 ---
-- name: install nginx
-  apt: name=nginx
-  tags: webserver
+- import_tasks: install.yml
+  tags: nginx_install
+  when: nginx_install
 
 - block:
   - name: mkdir cert folder
