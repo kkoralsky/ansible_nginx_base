@@ -16,3 +16,5 @@ nginx_chunked_encoding: false
 nginx_install: yes
 nginx_install_os: no  # install from official Nginx repo instead
 nginx_apt_release: '{{ ansible_distribution_release }}'
+
+nginx_user: '{% if nginx_install_os %}www-data{% else %}nginx{% endif %}'
