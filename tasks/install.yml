@@ -1,0 +1,15 @@
+---
+- name: install nginx from official repo
+  apt: name=nginx default_release='l=Debian' state=latest
+  when: nginx_install_os
+
+- block: 
+  - name: install https apt transport
+    apt: name=apt-transport-https
+  - name: add apt key for official repo
+    apt_key: url='{{ nginx_official_apt.key }}'
+  - name: add nginx official repository
+    apt_repository: repo='deb {{ nginx_official_apt.repo }} {{ nginx_official_apt.release }} nginx' 
+  - name: install nginx from official repo
+    apt: name=nginx default_release='l=nginx' state=latest
+  when: not nginx_install_os

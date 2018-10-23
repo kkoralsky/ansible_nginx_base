@@ -20,4 +20,11 @@
     when: redirect_http
     notify: reload nginx
   when: ssl
-  tags: webserver
+
+- name: basic nginx configuration
+  template: src='nginx.conf.j2' dest=/etc/nginx/nginx.conf
+  notify: restart nginx
+- name: add nginx user
+  user: name='{{ nginx_user }}' shell=/bin/false
+- name: mkdir sites-enabled directory
+  file: name=/etc/nginx/sites-enabled state=directory
